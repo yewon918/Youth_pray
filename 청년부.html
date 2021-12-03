@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>세종 청년부 랜덤 기도짝</title>
+  <link rel="stylesheet" href="reset.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    function reArray(arr) {
+      var i = 0;
+      var newArray = [];
+      while (arr.length > 0) {
+        var x = parseInt(Math.random() * arr.length);
+        newArray[i] = arr[x];
+        i++;
+        arr.splice(x, 1);
+      }
+      return newArray;
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Jeju Gothic', sans-serif;
+    }
+
+    table {
+      margin-top: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      height: 200px;
+      text-align: center;
+    }
+
+    table,
+    td,
+    tr {
+      border-collapse: collapse;
+
+    }
+
+    table {
+      font-size: 15pt;
+    }
+
+    .container-fluid {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      /* margin-left: 20px; */
+    }
+
+    .bg1 {
+      /* background-color: #90A53C; */
+      background-color: #E0FAAD;
+    }
+
+    .bg2 {
+      background-color: #FFF4C7;
+    }
+
+    .left {
+      float: left;
+      margin-left: 10px;
+      text-align: left;
+    }
+
+    .right {
+      float: right;
+      margin-right: 25px;
+      text-align: right;
+
+    }
+
+    #leader h3,
+    h4 {
+      display: inline;
+    }
+
+    section {
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+    }
+
+    footer {
+      clear: both;
+      background-color: #3A403C;
+      color: grey;
+    }
+
+    footer a {
+      color: grey;
+    }
+
+    .navbar {
+      top: 0px;
+      position: fixed;
+      width: 105vw;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#Me">세종 산성교회 청년부</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#pray">기도짝</a></li>
+          <li><a href="#sayeok">사역자 기도제목</a></li>
+          <li><a href="#leader">셀리더 기도제목</a></li>
+          <li><a href="https://www.bskorea.or.kr/bible/korbibReadpage.php" class="glyphicon glyphicon-book"></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid" id="pray">
+    <br><br>
+    <h1>셀리더 이번주 기도짝</h1>
+
+    <script>
+      let today = new Date();
+
+      let year = today.getFullYear(); // 년도
+      let month = today.getMonth() + 1; // 월
+      let date = today.getDate(); // 날짜
+      document.write(year + '/' + month + '/' + date);
+      document.write('<br>');
+
+      var LeaderName = [
+        "김한솔", "박경숙", "박슬기",
+        "박승옥", "송효정", "안동수", "윤태우",
+        "이소빈", "이은이", "이준희",
+        "이지승", "장용수", "양은수",
+        "박현아", "김한빈", "김예원"
+      ];
+
+      var output = reArray(LeaderName);
+
+      document.write('<table>');
+      document.write('<tr>');
+      document.write('<th>1팀</th>');
+      for (var i = 0; i < 3; i++) {
+        document.write('<td>' + output[i] + '</td>');
+      }
+      document.write('</tr><tr>');
+      document.write('<th>2팀</th>');
+      for (var i = 3; i < 6; i++) {
+        document.write('<td>' + output[i] + '</td>');
+      }
+      document.write('</tr><tr>');
+      document.write('<th>3팀</th>');
+      for (var i = 6; i < 9; i++) {
+        document.write('<td>' + output[i] + '</td>');
+      }
+      document.write('</tr><tr>');
+      document.write('<th>4팀</th>');
+      // 네번째
+      for (var i = 9; i < 12; i++) {
+        document.write('<td>' + output[i] + '</td>');
+      }
+      document.write('</tr><tr>');
+      document.write('<th>5팀</th>');
+      // 다섯번째
+      for (var i = 12; i < 16; i++) {
+        document.write('<td>' + output[i] + '</td>');
+      }
+      document.write('</tr>');
+      document.write('<p>*맨 앞에 있는 사람이 인도!</p>');
+      document.write('</table>');
+    </script>
+    <br><br><br><br><br>
+  </div>
+
+  <br><br>
+  <div class="container-fluid bg1" id="sayeok">
+    <br><br>
+    <h1>2021 하반기 사역자 기도제목</h1>
+    <div class="row container-fluid">
+      <section class="left">
+        <h3 class="name">김민정 목사님</h3>
+        <p>1. 이런 목사가 되게 하소서. <br>
+          주님을 닮은 목자가 되게 하소서. 맡겨주신 양들을 사랑하고 그들을 위해 기도하는 목자 되기 원합니다.<br>
+           양들을 돌볼 때, 필요한 사랑과 지혜, 능력을 허락해주세요. </p>
+        <p>2. 이런 찬양 인도자가 되게 하소서.<br>
+          삶의 모든 순간 예배자이길 원합니다. 하나님이 기뻐하시는 예배자가 되게 하시고, 동역자들과 그 기쁨을 누리게 하소서. <br>
+          성도들이 오직 하나님께 영광 돌리도록 찬양의 통로로 사용 하소서. </p>
+        <p>3. 이런 스승이 되게 하소서. <br>
+          제자들에게 테크닉만 가르치는 선생이 아니라 하나님을 알려주는 스승이 되게 해주세요.<br>
+          그래서 제자들을 예배자로, 문화 선교사로 세우게 하소서.</p>
+      </section>
+    </div>
+    <!-- 김민정 목사님 row끝 -->
+    <div class="row container-fluid">
+      <section class="right">
+        <h3 class="name">손주범 목사님</h3>
+        <p>1. 가정을 위해 기도합니다.<br>
+          가정에 '손하빈(딸)' 새 생명을 주시니 감사합니다.<br>
+           아이들이 건강하고 아름답게 자라게 하시고 형제간에 사랑으로 돌보며 존중하게 하옵소서.<br>
+           부모로서 말씀을 바탕으로 자애롭게 훈육하게 하시고, 예수님의 성품 닮도록 믿음을 최우선 순위로 삼으며<br>
+           친구들과 이웃들에게 너그러운 아이들로 자라가게 하옵소서.<br>
+           최선을 다해 학업에 임하고, 자신의 맡은 일에 책임을 다하는 아이들이 되게 하시고,<br>
+           하나님이 주신 아이들을 양육하는데 있어, 오히려 아이들로부터 부모가 배우는 깨달음의 은혜가 있게 하옵소서.<br>
+         </p>
+         <p>2. 사역을 위해 기도합니다.
+         1) 청년공동체 사역자들(이동호 목사, 김민정 목사, 류은영 간사, 지수욱 전도사, 주노진 전도사, 박승옥 간사, 김선화 간사)이<br>
+       한 해동안 건강하고, 아름다운 믿음의 가정을 이루며, 서로 한 마음 되어 기쁨과 열정 넘치는 청년 사역을 감당하게 하옵소서</p>
+
+      </section>
+    </div>
+    <!-- 손주범 목사님 row끝 -->
+    <div class="row container-fluid">
+      <section class="left">
+        <h3 class="name">박승옥 간사님</h3>
+        <p>1. 겉으로만 말로만 하나님을 사랑하지않고 모든마음과 모든것을 쏟아부을만큼 진정 하나님을 사랑하는 자녀가되기를</p>
+        <p>2. 직장에서 거룩한 예배자로 서게하시고, 직장에서 일하는 모든 시간속에서 산제물이 되게하소서..<br>
+          만나는 사람들에게 복음을 전할수있는 기회를 허락하시고, 제자삼을수있는 사람을 붙여주시기를</p>
+        <p>3. 청년부 안에서 만나는 모든청년들을 위해 눈물로 기도하게 하시고, 눈물로 양육하게 하소서.. <br>
+          사역자를 포함하여 모든청년들 살아도주를위해 죽어도 주를위해 살아가는 자들되게하소서</p>
+      </section>
+    </div>
+    <!-- 박승옥 간사님 row끝 -->
+    <br>
+  </div>
+  <div class="container-fluid bg2" id="leader">
+    <br><br>
+    <h1>2021 하반기 셀리더 기도제목</h1>
+    <br><br>
+    <div class="row container-fluid">
+      <section class="left">
+        <h3 class="name">김한솔</h3>
+        <h4>&nbsp&nbsp&nbspABC</h4>
+
+        <p>하나님을 향한 저의 고백이 올바르게 해주시고,<br> 그 기도가 저를 견인하게 해주시기를 기도합니다!</p>
+      </section>
+
+      <section class="right">
+        <h3 class="name">박슬기</h3>
+        <h4>&nbsp&nbsp&nbsp세빛</h4>
+        <br>
+        <p>1. 하나님 얼굴 앞에 아무것도 두지 않기!</p>
+        <p>2. 기대함과 사모함이 회복되고 하나님으로 인해 기쁠 수 있으면 좋겠어요.</p>
+      </section>
+    </div>
+    <div class="row container-fluid">
+      <section class="left">
+        <h3 class="name">이충열</h3>
+        <h4>&nbsp&nbsp&nbsp하우스</h4><br>
+        셀 모임을 이끌 수록 느끼는 건 셀원 각자의 성품이 다르며,<br>
+        모든 셀원이 행복할 수 있는 방안을 찾기가 쉽지 않은 거 같아요. <br>
+        주님이 보시기에 가장 아름다운 셀모임의 모습이 무엇인지 알 수 있는 지혜 허락해주세요.<br>
+        이를 위해 내 자신을 내려놓고 기도하고 말씀을 읽으며 주님의 음성에 예민할 수 있는 시간 허락해주세요.<br>
+        또한, 어제의 내 모습보다 내일의 내 모습이 더 주님이 보시기에 아름다운 모습이 되는, 성장해나가는 21년 하반기 되길 소망합니다.<br>
+      </section>
+    </div>
+    <div class="row container-fluid">
+      <section class="right">
+        <h3 class="name">이준희</h3>
+        <h4>&nbsp&nbsp&nbsp부활셀 헬퍼</h4>
+        <p>삶의 모든 문제들을 하나님 앞에 겸손히 내려놓고,<br>
+          그의 인도하심을 날마다 체험함으로 감사의 고백이 나의 삶 가운데 넘쳐 흐르게 하소서.</p>
+      </section>
+
+      <section class="left">
+        <h3 class="name">김한빈</h3>
+        <h4>&nbsp&nbsp&nbsp뿌미</h4>
+        <p>1. 셀원들과의 통독모임 끝까지 잘 진행될 수 있도록 기도해주세요.<br>
+          처음에는 5명 지금은 2명인데 점점 더 참여하는 셀원들 되길 기도부탁드립니다!</p>
+
+        <p>2. 그 무엇보다 하나님의 시선을 먼저 의식하기를.. <br>
+          제 마음과 뜻보다는 주님의 마음과 뜻을 먼저 알고 그대로 순종하며 나아갈 수 있기를 기도해주세요!</p>
+
+        <p>3. 가족(아빠, 큰오빠, 작은오빠, 새언니)과 믿지않는 친구들을 위해 기도하고, <br>
+          그들이 하루 빨리 주님을 믿고 함께 신앙생활 할 수 있도록 기도해주세요!</p>
+      </section>
+    </div>
+    <div class="row container-fluid">
+      <section class="right">
+        <h3 class="name">이소빈</h3>
+        <h4>&nbsp&nbsp&nbsp하랑</h4>
+        <p>하나님의 은혜를 잊지 않고 기억하며 허락하신 모든 자리에서 신실한 매 순간을 보낼 수 있게 해주세요🙏🏻</p>
+      </section>
+
+      <section class="left">
+        <h3 class="name">장용수</h3>
+        <h4>&nbsp&nbsp&nbsp감동</h4>
+        <p>1. 남은 하반기도 셀리더로서의 역할을 지혜롭고 적극적으로 감당할 수 있도록</p>
+
+        <p>2. 인생의 중요한 결정을 하나님의 뜻을 따라 담대히 할 수 있도록</p>
+
+        <p>3. 직장에서 하나님의 방법으로 선한 영향을 주는 사람이 되도록</p>
+      </section>
+    </div>
+    <div class="row container-fluid">
+      <section class="right">
+        <h3 class="name">이은이</h3>
+        <h4>&nbsp&nbsp&nbsp아하바</h4>
+        <p>1. 주님을 끝까지 사랑할 수 있도록 허락해주세요</p>
+        <p>2. 양쪽 발목 인대 파열로 인해 통증이 있을 때가 있는데, <br>
+          완쾌가 어렵지만 주님께서는 능치 못함 없으신 분이니! 깨끗이 치유되길 원합니다.</p>
+        <p>3. 전도 대상자 (vip)를 위해 함께 기도해주세요.<br>
+          - 친구 : 민지현, 김기영, 손은경, 김주영</p>
+        <p>4. 셀원을 향해 따뜻함과 사랑의 마음이 계속해서 부어지길 기도해주세요.</p>
+      </section>
+    </div>
+    <div class="row container-fluid">
+      <section class="left">
+        <h3 class="name">박현아</h3>
+        <h4>&nbsp&nbsp&nbsp하나</h4>
+        <p>1. 청소년부 목자& 청년부 셀리더로서 목원들과 셀원들을 위해 기도하고 기쁨으로 섬길 수 있길 </p>
+
+        <p>2. 하나님을 가장 우선순위에 두고 사랑할 수 있는 제가 되길</p>
+
+        <p>3. 어떤 일이든지 기도보다 앞서지 않게 하시고 하나님의 말씀을 항상 귀 기울이는 제가 되길</p>
+      </section>
+    </div>
+    <div class="row container-fluid">
+      <section class="right">
+        <h3 class="name">김예원</h3>
+        <h4>&nbsp&nbsp&nbsp산소 O<sub>2</sub></h4>
+        <p>1. 진로를 고민하는 가운데에 있고, 진로를 위해 정말 많은 노력과 공부가 필요합니다.<br>
+          모든 과정 가운데에 시선을 하나님에게만 고정시키고 힘과 지혜 주시도록</p>
+        <p>2. 외할아버지가 의식이 없는 채로 병원에 계십니다. 예수님 영접하시고, 주위 가족들의 마음 위로하시길,<br>
+          지금 보기엔 답답하고 힘들지만 결국 하나님만이 영광 받으시는 상황이 펼쳐지길</p>
+        <p>3. 영혼 구원에 대해 끊임없는 관심 갖게 하시고, 한순간 멍때리면 마음이 차가워지고는 하는데 정신차려서 따뜻한 마음 지키도록</p>
+        <p>4. 셀원들을 대할 때에 많은 지혜와 능력, 인내심이 필요합니다. 내 인간적인 마음으로 보지 않고 하나님의 눈과 마음으로 보도록</p>
+      </section>
+    </div>
+    <div class="row container-fluid">
+      <section class="left">
+        <h3 class="name">송효정</h3>
+        <h4>&nbsp&nbsp&nbsp셀러드셀 헬퍼</h4>
+        <p>1. 직장(앞으로의 거처?)을 위한 기도. 예배하신 길 주님 손에 맡겨드립니다!! </p>
+        <p>2. 바빠서 챙기지 못한 건강을 위한 기도.성전과도 같은 나의 육신 소중히 여기는 내가되길!</p>
+        <p>3. 가족의 영육간의 축복과 강건함</p>
+        <p>4. 주님 허락하신 때에 합당하신 배우자허락하시길. 때를 기다리고 기도하는 내가되길</p>
+      </section>
+    </div>
+    <div class="row container-fluid">
+      <section class="left">
+        <h3 class="name">안동수</h3>
+        <h4>&nbsp&nbsp&nbsp산소 O<sub>2</sub>셀 헬퍼</h4>
+        <p>1. 주어진 시간을 지혜롭게 사용할 수 있도록</p>
+        <p>2. 공부가 하나님의 영광을 드러내기 위한 도구가 되었으면</p>
+        <p>3. 하나님이 진로, 가야할 길을 잘 이끌어주시도록</p>
+      </section>
+    </div>
+    <div class="row container-fluid">
+      <section class="right">
+        <h3 class="name">김재웅</h3>
+        <h4>&nbsp&nbsp&nbsp셀러드</h4>
+        <p>1. 하나님께서 보내신 자리에서 하나님의 꿈을 살아내도록</p>
+        <p>2. 지금 공부하고 있는 심리학 분야에서 하나님께 쓰임 받을 것을 기대하며 감당해낼 수 있도록</p>
+        <p>3. 건강하기 :)</p>
+      </section>
+      <section class="left">
+        <h3 class="name">윤태우</h3>
+        <h4>&nbsp&nbsp&nbspFL</h4>
+        <p>1. 지금처럼 셀리더 자리를 기쁨으로 행복하게 감당하기</p>
+        <p>2. 직장에서 빛과 소금으로, 하나님을 드러내는 삶을 살도록</p>
+        <p>3. 건강하기 :)</p>
+      </section>
+    </div>
+    <div class="row container-fluid">
+      <section class="right">
+        <h3 class="name">이지승</h3>
+        <h4>&nbsp&nbsp&nbsp부활</h4>
+        <p>1. 내면에 하나님의 좋은 것들로 채워져서 좋은 것들이 흘러 나가도록</p>
+        <p>2. 본질에 대한 생각이 많은데 성경에서 '명분'을 찾고, 옳고 그름에 대해 능동적으로 반응하기</p>
+        <p>3. 기도제목들이 많지만 우릴 위해 간구하시는 성령님을 의지하며 끊임없이 하나님께 기도하기</p>
+        <p>4. 진로, 커리어에 대해 하나님의 인도하심을 경험하고 하나님과 계속 친밀하기</p>
+      </section>
+    </div>
+    <div class="row container-fluid">
+      <section class="left">
+        <h3 class="name">박경숙</h3>
+        <h4>&nbsp&nbsp&nbsp믿소</h4>
+        <p>1. 삶으로 예수님의 모습을 보여주는, 스치기만 해도 전도되는 삶을 살도록</p>
+        <p>2. 언제나 셀원들을 사랑으로 중보하고 양육하며 열매 맺기</p>
+        <p>3. 건강하고 하나님 안에서 다함없는 힘을 낼 수 있도록 :)</p>
+      </section>
+    </div>
+
+  </div>
+</body>
+
+<footer class="container-fluid text-center">
+  <div class="row">
+    <div class="col-sm-6">
+      <img src="https://cdn.imweb.me/upload/S201807285b5bf8234fb4d/5b7fb283a8c06.png" style="width: 124px; height: 107.40845070422536px;"><br><br>
+      <p>대전캠퍼스: 우)35416 대전광역시 서구 구봉로 458 <br>(정림동 35-1) Tel. 042)585-8111</p>
+      <p>세종캠퍼스: 우)30124 세종특별자치시 다정북로 90 <br>(다정동 312) Tel. 044)862-8117</p>
+      <p>Copyright (c) 2021 세종청년부 All Rights Reserved.</p>
+
+    </div>
+    <div class="col-sm-6">
+      <br><br>
+      <a href='https://www.sansung.org/'>산성교회 홈페이지</a><br><br>
+      <a href='https://www.youtube.com/c/sansung/featured'>산성교회 유튜브</a><br><br>
+      <a href='https://www.youtube.com/channel/UClD4tpUmsgxTgwxF_HrYriA/featured'>산성교회 청년 유튜브</a><br><br>
+      <a href='https://youtu.be/nNj8_iAmyWY'>사랑하는 셀원들아 10분 전에 좀 와라</a><br><br>
+      <a href='https://www.instagram.com/p/CKgIBcOBO4t/'>청년부 인스타그램</a>
+    </div>
+  </div>
+</footer>
+
+</html>
